@@ -1,4 +1,6 @@
-# Mini Search Engine (C++ / CMake)
+# Nimi Search (C++ / CMake)
+    A note on the name:If (you are wondering why it is named nimi search || you assumed that it might have been a typo)
+    {sorry to say this but i have a very bad naming sense}
 
 ## Build (MinGW / MSYS2)
 1. Open MSYS2 MinGW64 shell.
