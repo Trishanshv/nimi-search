@@ -10,6 +10,6 @@ struct Document {
     std::string path;
 };
 
-DynamicArray<Document> crawler(const std::string& startPath, int maxDepth);
+DynamicArray<Document> crawl_folder(const std::string& startPath,int depth);
 
 #endif

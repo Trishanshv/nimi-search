@@ -13,7 +13,11 @@ struct DirAndDepth {
 };
 
 static std::string  readFile(const fs::path& filepath){
-    
+    std::ifstream in(filepath);
+    if(!in) throw std::runtime_error("Could not open file:"+filepath.string());
+    std::ostringstream ss;
+    ss<<in.rdbuf();
+    return ss.str();
 }
 
 DynamicArray<Document> crawl_folder(const std::string& startPath,int depth){
@@ -42,7 +46,7 @@ DynamicArray<Document> crawl_folder(const std::string& startPath,int depth){
                     readDocs.push_back(std::move(doc));
                 }
             }
-            catch(const std::exception& e){std::cerr << e.what() <<'file Path:-'<<entry.path()<<'\n';}
+            catch(const std::exception& e){std::cerr << e.what() <<"file Path:-"<<entry.path()<<'\n';}
         }
     }
     return readDocs;

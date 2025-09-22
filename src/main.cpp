@@ -1,14 +1,16 @@
 #include <iostream>
 #include <string>
+#include "crawler.h"
 
 int main(int argc, char** argv) {
-    std::string banner = "Mini Search Engine ready";
-    // Show how to pass optional config (example)
-    std::cout << banner << std::endl;
-    if (argc > 1) {
-        std::cout << "Config/path: " << argv[1] << std::endl;
-    } else {
-        std::cout << "Run: mini_search_engine <path-to-docs> (optional)" << std::endl;
+    std::string startPath = (argc>1)? argv[1]:"../data";
+    std::cout<<"Crawling Folder:"<<startPath<<'\n';
+
+    DynamicArray<Document> docs=crawl_folder(startPath,2);
+
+    size_t siz=docs.Size();
+    std::cout<<"Crawled "<<siz<<" documents\n";
+    for(size_t i=0;i<siz;i++){
+        std::cout<<"Document ID: "<<docs[i].docID<<", Path: "<<docs[i].path<<", Content Size: "<<docs[i].content.size()<<'\n';
     }
-    return 0;
 }
