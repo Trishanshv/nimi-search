@@ -48,7 +48,7 @@ cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug ..
 Compile the project:Bashmingw32-make
 RunTo run the engine against a data directory:Bash./nimi_search.exe data
 ```
-##How It Works
+## How It Works
 
 When you run the executable,
 the engine performs the following pipeline:BFS Crawling: Performs a Breadth-First Search on the target folder up to the configured depth.
@@ -59,14 +59,14 @@ Filtering: Applies stop-word filtering using config/stopwords.txt.
 Output: Prints discovered document paths and prepares data for indexing.
 
 ---
-###Design Principles
+### Design Principles
 
 No std::vector: Utilizes custom manual memory management to demonstrate understanding of heap allocation and resizing logic.
 Systems-Level Focus: Prioritizes raw pointers and custom containers over high-level STL abstractions where educational value is high.
 BFS Traversal: Implements graph traversal algorithms for file system crawling.Clean Architecture: Modular separation of concerns (Crawler vs. Parser vs. Data Structures).
 Warning-Clean: Compiles with -Wall -Wextra for strict code quality.
 
-##Roadmap (In Progress)
+## Roadmap (In Progress)
 
 The following modules are currently in development to transition from a crawler to a full search engine:
 ```
@@ -80,9 +80,12 @@ The following modules are currently in development to transition from a crawler 
 [ ] Profiling: Benchmarks for memory usage and speed.
 ```
 
-##Why This Project Exists
+## Why This Project Exists
 This project is intentionally built from scratch to demonstrate:Deep understanding of memory layouts and pointer arithmetic.Low-level container design (implementation of dynamic arrays).Core information-retrieval algorithms (Indexing, Ranking, Tokenizing).Performance-aware C++ development
 
 ---
 
-    A note on the name:If (you are wondering why it is named nimi search || you assumed that it might have been a typo)                                                     {sorry to say this but i have a very bad naming sense}
+    // A note on the name:
+    if (you.wondering() || you.assumed(TYPO)) {
+        return "Sorry to say this, but I have a very bad naming sense.";
+    }
