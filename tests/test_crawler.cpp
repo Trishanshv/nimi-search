@@ -4,7 +4,7 @@
 
 int main(){
     DynamicArray<Document> docs=crawl_folder("../data",1);
-    assert(docs.Size()>0);
+    assert(docs.Size()>0);//Should find at least one file in data
     std::cout<<"[TEST] Crawler found "<<docs.Size()<<" documents\n";
     return 0;
 }
