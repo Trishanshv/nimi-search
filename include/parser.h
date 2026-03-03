@@ -8,11 +8,11 @@
 class Parser{
 std::unordered_set<std::string> m_stopwords;
 std::string normalize(const std::string& word);
-static bool isStopWord(const std::string& word, const std::string& stopwordFile); 
+bool isStopWord(const std::string& word); 
 
 public:
     Parser(const std::string& stopwordFile="config/stopwords.txt");
-    static DynamicArray<std::string> tokenizer(const std::string& text, const std::string& stopwordFile = "config/stopwords.txt");
+    DynamicArray<std::string> tokenizer(const std::string& text);
 
 };
 

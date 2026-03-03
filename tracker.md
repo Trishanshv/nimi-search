@@ -1,6 +1,6 @@
 # Nimi Search Tracker
 
-Last updated: 2026-02-26
+Last updated: 2026-03-03
 
 ## 1) Repository Audit (completed)
 
@@ -37,15 +37,24 @@ Not included for planning detail (generated artifacts):
 **Goal:** Ensure current code compiles cleanly and matches documented behavior.
 
 Tasks:
-- [ ] Add `src/parser.cpp` to CMake target.
-- [ ] Fix parser API consistency (`static` vs instance methods).
-- [ ] Restore working stopword logic (or adjust interface).
-- [ ] Build with warnings enabled and resolve parser-related compile errors.
-- [ ] Update README status table to reflect actual state.
+- [x] Add `src/parser.cpp` to CMake target.
+- [x] Fix parser API consistency (`static` vs instance methods).
+- [x] Restore working stopword logic (or adjust interface).
+- [x] Build with warnings enabled and resolve parser-related compile errors.
+- [x] Update README status table to reflect actual state.
 
 Exit criteria:
-- `nimi_search` builds successfully from clean `build/`.
-- Parser module compiles and links.
+- [x] `nimi_search` builds successfully from clean `build/`.
+- [x] Parser module compiles and links.
+
+**Status: COMPLETED (2026-03-03)**
+
+Changes Made:
+- Added `src/parser.cpp` to CMakeLists.txt target_sources
+- Converted Parser from static utility to instance-based class
+- Made `tokenizer()` and `isStopWord()` instance methods
+- Implemented `isStopWord()` using `m_stopwords` member variable
+- Verified clean build with no errors/warnings (-Wall -Wextra -Wpedantic enabled)
 
 ## Phase 1 — Parser Quality & Tests
 **Goal:** Make tokenization/normalization reliable and testable.
@@ -124,7 +133,7 @@ Exit criteria:
 
 ## 4) Immediate Next Actions (recommended)
 
-1. Complete **Phase 0** first (parser + CMake integration).
+1. ~~Complete **Phase 0** first (parser + CMake integration).~~ ✓ DONE
 2. Add parser tests from **Phase 1** before indexing work.
 3. Start inverted index MVP only after parser behavior is locked.
 
@@ -133,7 +142,7 @@ Exit criteria:
 ## 5) Progress Board
 
 - [x] Repository audit completed.
-- [ ] Phase 0 started.
+- [x] Phase 0 completed (2026-03-03).
 - [ ] Phase 1 started.
 - [ ] Phase 2 started.
 - [ ] Phase 3 started.

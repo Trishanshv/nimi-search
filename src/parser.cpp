@@ -14,29 +14,18 @@ std::string Parser::normalize(const std::string&text){
     return norm;
 }
 
-/*bool Parser::isStopWord(const std::string& word, const std::string& stopwordFile){
-    static std::unordered_set <std::string> stopword;
-    static bool loaded=0;
+bool Parser::isStopWord(const std::string& word){
+    return m_stopwords.find(word) != m_stopwords.end();
+}
 
-    if(!loaded){
-        std::ifstream file (stopwordFile);
-        std::string w;
-        while(file >> w){
-            stopword.insert(w);
-        }
-        loaded=1;
-    }
-    return stopword.find(word)!=stopword.end();
-}*/
-
-DynamicArray<std::string> Parser::tokenizer(const std::string& text,const std::string& stopwordFile){
-    std::string norm= normalize(text);
+DynamicArray<std::string> Parser::tokenizer(const std::string& text){
+    std::string norm = normalize(text);
     std::istringstream iss(norm);
 
     DynamicArray<std::string> tokens;
     std::string word;
-    while(iss>>word){
-        if(!isStopWord(word,stopwordFile)) tokens.push_back(word);
+    while(iss >> word){
+        if(!isStopWord(word)) tokens.push_back(word);
     }
     return tokens;
 }

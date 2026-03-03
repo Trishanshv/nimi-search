@@ -16,6 +16,7 @@ add_executable(nimi_search ${SRC_FILES})
 target_sources(nimi_search PRIVATE
     src/main.cpp
     src/crawler.cpp
+    src/parser.cpp
     )
 
 target_include_directories(nimi_search PRIVATE 

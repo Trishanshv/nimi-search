@@ -8,14 +8,16 @@ relying instead on custom memory-managed containers. This project focuses strict
 
 ##Project Status
 
-ModuleStatusCMake Build System| Completed
-Project Architecture & Layout| Completed
-Custom Dynamic Array (replaces std::vector)| Completed
-BFS Folder Crawler (depth-limited)| Completed
-Text File Loader| Completed
-Raw Document Ingestion| Completed
-Tokenizer + Normalizer + Stopword Removal| Completed
-Test Harnesses| Completed
+Module | Status
+-------|-------
+CMake Build System | Completed
+Project Architecture & Layout | Completed
+Custom Dynamic Array (replaces std::vector) | Completed
+BFS Folder Crawler (depth-limited) | Completed
+Text File Loader | Completed
+Raw Document Ingestion | Completed
+Tokenizer + Normalizer + Stopword Removal | Completed (Phase 0 Stabilized)
+Test Harnesses | Partially Complete (Crawler only)
 
 ##Project Architecture
 
